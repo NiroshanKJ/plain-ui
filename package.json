@@ -1,0 +1,36 @@
+{
+  "name": "@x-niroshan-x/react-plain-ui",
+  "version": "1.0.0",
+  "description": "Bunch of react UI components",
+  "main": "./dist/index.js",
+  "files": [
+    "./dist"
+  ],
+  "scripts": {
+    "build": "rm -rf ./build && tsc",
+    "dev": "nodemon --exec 'npm run build' --ignore ./dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/x-NIROSHAN-x/react-plain-ui.git"
+  },
+  "keywords": [
+    "react",
+    "components",
+    "ui",
+    "plain"
+  ],
+  "author": "Niroshan Jayathilaka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/x-NIROSHAN-x/react-plain-ui/issues"
+  },
+  "homepage": "https://github.com/x-NIROSHAN-x/react-plain-ui#readme",
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "peerDependencies": {
+    "@types/react": "^18.2.47"
+  }
+}
