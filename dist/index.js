@@ -1,3 +1,2 @@
-export * from './button';
-export * from './theme/provider';
-export * from './theme/types';
+export * from './theme';
+export * from "./ui";

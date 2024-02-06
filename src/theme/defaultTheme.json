@@ -1,0 +1,47 @@
+{
+  "dark": {
+    "name": "dark",
+    "theme": {
+      "primary": "#007BFF",
+      "secondary": "#6C757D",
+      "info": "#17A2B8",
+      "success": "#28A745",
+      "warning": "#FFC107",
+      "danger": "#DC3545"
+    },
+    "button": {
+      "padding": "0.8rem 1rem",
+      "border": "1px solid blue",
+      "borderRadius": "3px",
+      "boxShadow": "0px 0px 5px 1px rgba(0,0,0,0.75)",
+      "fontSize": "1rem",
+      "fontWeight": "bold",
+      "fontWhite": true
+    },
+    "column": {
+      "textAlign": "center",
+      "background": "#00ffff",
+      "padding": "0px",
+      "border": "1px solid #eee",
+      "borderRadius": "0.41rem",
+      "boxShadow": "1px 1px 5px 0px #eee",
+      "fontSize": "1rem",
+      "fontWeight": "bold",
+      "fontWhite": false
+    },
+    "row": {
+      "padding": "1rem"
+    },
+    "input": {
+      "backgroundColor": "#eee",
+      "labelColor": "#333",
+      "padding": "0rem",
+      "border": "1px solid blue",
+      "borderRadius": "3px",
+      "boxShadow": "0px 0px 1px 1px rgba(0,0,0,0.75)",
+      "fontSize": "1rem",
+      "fontWeight": "bold",
+      "fontWhite": false
+    }
+  }
+}

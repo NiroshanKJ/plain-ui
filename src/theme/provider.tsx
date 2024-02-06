@@ -1,39 +1,43 @@
-import React, {
-  ReactNode,
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
-import { PlainUIContextProps, PlainUIProviderProps } from "./types";
-import { ThemeProvider } from "styled-components";
+import React, { FC, createContext, useContext, useState } from "react";
+import { PlainUIContextProps, PlainUIProviderProps, ThemeState } from "./types";
+import { getFirstKeyInObject, prepareTheme } from "../helpers";
 
 const PlainUIContext = createContext<PlainUIContextProps>(undefined);
 
-export const PlainUIProvider: React.FC<PlainUIProviderProps> = ({
+export const PlainUIProvider: FC<PlainUIProviderProps> = ({
   children,
-  theme,
+  themes,
 }) => {
-  const [dark, setDark] = useState(false);
-  const [selectedTheme, setSelectedTheme] = useState(theme.light);
+  console.log("renders");
 
-  const setDarkMode = (dark: boolean) => setDark(dark);
+  const themeState: ThemeState = prepareTheme(
+    themes,
+    getFirstKeyInObject(themes)
+  );
+  const [theme, setTheme] = useState<ThemeState>(themeState);
 
-  useEffect(() => {
-    setSelectedTheme(dark ? theme.dark : theme.light);
-  }, [dark]);
+  const setCurrentTheme = (themeName: string) => {
+    const themeState: ThemeState = prepareTheme(themes, themeName);
+    setTheme(themeState);
+  };
 
   return (
-    <PlainUIContext.Provider value={{ dark, theme: selectedTheme, setDarkMode }}>
-      <ThemeProvider theme={selectedTheme}>{children}</ThemeProvider>
+    <PlainUIContext.Provider
+      value={{
+        theme: theme.theme,
+        setTheme: setCurrentTheme,
+      }}
+    >
+      <div style={theme.themeStyle}>{children}</div>
     </PlainUIContext.Provider>
   );
 };
 
-export const usePlainUIContext: () => PlainUIContextProps = () => {
+export const usePlainUI = () => {
   const context = useContext(PlainUIContext);
-  if (!context) {
-    throw new Error("usePlainUIContext must be used within a PlainUIProvider");
-  }
+  if (!context)
+    throw new Error(
+      "usePlainUI must be used within a PlainUIProvider to access the Plain UI context."
+    );
   return context;
 };

@@ -1,35 +1,79 @@
 import { ReactNode } from "react";
 
-export type UIVariant =
+export interface PlainUITheme {
+  name: string;
+
+  theme: {
+    primary: string;
+    secondary: string;
+    info: string;
+    success: string;
+    warning: string;
+    danger: string;
+  };
+  button: {
+    padding: string;
+    border: string;
+    borderRadius: string;
+    boxShadow: string;
+    fontSize: string;
+    fontWeight: string;
+    fontWhite: boolean;
+  };
+  column: {
+    textAlign: string;
+    background: string;
+    padding: string;
+    border: string;
+    borderRadius: string;
+    boxShadow: string;
+    fontSize: string;
+    fontWeight: string;
+    fontWhite: boolean;
+  };
+  row: {
+    padding: string;
+  };
+  input: {
+    backgroundColor: string;
+    labelColor: string;
+    padding: string;
+    border: string;
+    borderRadius: string;
+    boxShadow: string;
+    fontSize: string;
+    fontWeight: string;
+    fontWhite: boolean;
+  };
+}
+
+export type ThemeName = keyof PlainUITheme | string;
+
+export type PlainUIContextProps =
+  | {
+      theme: PlainUITheme;
+      setTheme: (theme: ThemeName | string) => void;
+    }
+  | undefined;
+
+export type PlainUIThemes = {
+  [key: string]: PlainUITheme;
+};
+
+export type PlainUIProviderProps = {
+  children: ReactNode;
+  themes: PlainUIThemes;
+};
+
+export type ThemeState = {
+  theme: PlainUITheme;
+  themeStyle: any;
+};
+
+export type UITypes =
   | "primary"
   | "secondary"
   | "info"
   | "warning"
-  | "danger";
-
-
-export interface PlainUIContextProps {
-  dark: boolean;
-  setDarkMode: (dark: boolean) => void;
-  theme: PlainUITheme;
-}
-
-export type PlainUIProviderProps = {
-  children: ReactNode;
-  theme: PlainUIThemeConfig | undefined;
-};
-
-export interface PlainUITheme {
-  color: {
-    primary: string;
-    secondary: string;
-    info: string;
-    warning: string;
-    danger: string;
-  };
-}
-
-export interface PlainUIThemeConfig {
-  dark: PlainUITheme;
-  light: PlainUITheme;
-}
+  | "danger"
+  | "success";

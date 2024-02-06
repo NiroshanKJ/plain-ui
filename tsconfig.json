@@ -1,16 +1,17 @@
 {
-    "compilerOptions": {
-        "jsx": "react",
-        "module": "ES6",
-        "target": "ES5",
-        "allowJs": true,
-        "esModuleInterop": true,
-        "outDir": "./dist",
-        "declaration": true,
-        "lib": ["ES2015"],
-        "noImplicitAny": true,
-        "moduleResolution": "Node"
-    },
-    "exclude": ["./example", "./node_modules"],
-    "include": ["./src"]
+  "compilerOptions": {
+    "jsx": "react",
+    "module": "ES6",
+    "target": "ES5",
+    "allowJs": true,
+    "esModuleInterop": true,
+    "outDir": "./dist",
+    "declaration": true,
+    "lib": ["ES2015"],
+    "noImplicitAny": true,
+    "moduleResolution": "Node",
+    "resolveJsonModule": true
+  },
+  "exclude": ["./example", "./node_modules"],
+  "include": ["./src"]
 }
