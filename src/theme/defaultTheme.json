@@ -2,7 +2,7 @@
   "dark": {
     "name": "dark",
     "theme": {
-      "primary": "#007BFF",
+      "primary": "red",
       "secondary": "#6C757D",
       "info": "#17A2B8",
       "success": "#28A745",
@@ -11,9 +11,9 @@
     },
     "button": {
       "padding": "0.8rem 1rem",
-      "border": "1px solid blue",
+      "border": "1px solid",
       "borderRadius": "3px",
-      "boxShadow": "0px 0px 5px 1px rgba(0,0,0,0.75)",
+      "boxShadow": "none",
       "fontSize": "1rem",
       "fontWeight": "bold",
       "fontWhite": true

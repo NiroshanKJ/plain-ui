@@ -27,14 +27,6 @@ export interface ColumnProps {
   customCss?: ObjectType;
 }
 
-const a = (p: { [keys: string]: string }): string => {
-  let css = "";
-  for (const [key, value] of Object.entries(p)) {
-    css = `${key}: ${value};`;
-  }
-  return css;
-};
-
 const StyledColumn = styled.div<{
   size: string;
   theme: PlainUITheme;
@@ -64,6 +56,12 @@ const StyledColumn = styled.div<{
   -moz-box-shadow: ${(props) => props.theme.column.boxShadow};
   box-shadow: ${(props) => props.theme.column.boxShadow};
   ${(props) => convertObjectToCss(props.$customcss)}
+
+  @media screen and (max-width: 768px) {
+    display: block;
+    width: 100%;
+    background: yellow;
+  }
 `;
 
 export const Column = ({

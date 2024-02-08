@@ -31,7 +31,8 @@ const StyledButton = styled.button<{
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
-  border: ${(props) => props.theme.button.border};
+  border: ${(props) => props.theme.button.border}
+    ${(props) => getColorByVariant(props.$variant)};
   border-radius: ${(props) => props.theme.button.borderRadius};
   -webkit-box-shadow: ${(props) => props.theme.button.boxShadow};
   -moz-box-shadow: ${(props) => props.theme.button.boxShadow};

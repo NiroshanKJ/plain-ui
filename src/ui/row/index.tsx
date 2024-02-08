@@ -43,13 +43,7 @@ const StyledRow = styled.div<{
   justify-content: ${(props) => props.$justifyContent};
   flex-direction: ${(props) => props.$contentdirection};
   ${(props) => convertObjectToCss(props.$customcss)};
-  @media (max-width: 768px) {
-    display: block;
-  }
 
-  @media (max-width: 480px) {
-    display: block;
-  }
 `;
 
 export const Row = ({

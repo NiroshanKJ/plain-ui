@@ -4,23 +4,30 @@ import {
   Input,
   Row,
   PlainUIProvider,
-  DefaultTheme,
+  Button,
 } from "@x-niroshan-x/react-plain-ui";
+
+import DefaultPlainUITheme from "@x-niroshan-x/react-plain-ui/src/theme/defaultTheme.json";
 
 function App() {
   return (
     <PlainUIProvider
       themes={{
-        ...DefaultTheme,
+        ...DefaultPlainUITheme,
         dark: {
-          ...DefaultTheme.dark,
-          row: { ...DefaultTheme.dark.row, padding: "0" },
-          column: { ...DefaultTheme.dark.column, padding: "0" },
+          ...DefaultPlainUITheme.dark,
+          row: { ...DefaultPlainUITheme.dark.row, padding: "0" },
+          column: { ...DefaultPlainUITheme.dark.column, padding: "0" },
         },
       }}
     >
       <Row justifyContent="right" alignItems="middle" height="screenFull">
-        <Column>
+        <Column
+          width="full"
+          justifyContent="center"
+          alignItems="middle"
+          size={"1"}
+        >
           <h1>Welome to the page</h1>
         </Column>
         <Column
@@ -28,11 +35,10 @@ function App() {
           alignItems="middle"
           contentDirection="column"
           height="full"
-          width="quater"
-          customCss={{ padding: "2rem" }}
         >
           <Input label="Username" />
           <Input label="Password" />
+          <Button label="Login" variant="secondary" />
         </Column>
       </Row>
     </PlainUIProvider>
