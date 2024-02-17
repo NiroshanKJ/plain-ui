@@ -17,7 +17,6 @@ const Template: React.FC = () => {
   console.log(themeData.darkMode);
   return (
     <>
-    {JSON.stringify(themeData)}
       <Button
         textWhite={true}
         onClick={onClickHandler}
