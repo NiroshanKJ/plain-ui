@@ -20,6 +20,7 @@ function App() {
       <Section width="auto">
         <Section width="500px">
           <Input label="Email" />
+          <Input type="checkbox" label="Email" />
           <Input type="password" label="Email" />
 
           <p>Here are some text</p>

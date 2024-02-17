@@ -4,7 +4,7 @@ import { UIVariations } from ".";
 import { getBackgroundVariant } from "./helpers";
 
 export type InputProps = {
-  type?: string;
+  type?: "text" | "email" | "password" | "number";
   onChange?: () => void;
   label?: string;
   disabled?: boolean;
