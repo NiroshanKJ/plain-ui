@@ -8,7 +8,6 @@
   ],
   "scripts": {
     "build": "rm -rf ./build && tsc",
-    "dev": "nodemon --exec 'npm run build' --ignore ./dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -28,9 +27,18 @@
   },
   "homepage": "https://github.com/x-NIROSHAN-x/react-plain-ui#readme",
   "devDependencies": {
-    "nodemon": "^3.0.2"
+    "@types/node": "^20.11.17",
+    "@types/react": "^18.2.55",
+    "nodemon": "^3.0.2",
+    "typescript": "^5.3.3"
   },
   "peerDependencies": {
-    "@types/react": "^18.2.47"
+    "react": "^18.8.0",
+    "react-dom": "^18.2.0"
+  },
+  "dependencies": {
+    "react-bootstrap": "^2.10.1",
+    "react-grid-layout": "^1.4.4",
+    "styled-components": "^6.1.8"
   }
 }

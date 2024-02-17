@@ -1,17 +1,27 @@
 {
     "compilerOptions": {
+        "resolveJsonModule": true,
+        "strict": false,
         "declaration": true,
         "outDir": "./dist",
         "rootDir": "./src",
-        "esModuleInterop":true,
+        "esModuleInterop": true,
         "jsx": "react-jsx",
-        "lib":["ES2015"],
+        "lib": [
+            "ES6", "DOM"
+        ],
         "target": "ES5",
         "module": "NodeNext",
         "baseUrl": "./",
         "paths": {
-            "@x-niroshan-x/react-plain-ui/*": ["dist/*"]
-        }
-        
-    }
+            "@x-niroshan-x/react-plain-ui/*": [
+                "dist/*"
+            ]
+        },
+    },
+    "exclude": [
+        "dist",
+        "node_modules",
+        "example"
+    ]
 }

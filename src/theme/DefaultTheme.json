@@ -1,0 +1,22 @@
+{
+  "light": {
+    "variant": {
+      "primary": "blue",
+      "secondary": "red",
+      "info": "yellow",
+      "success": "grey",
+      "warning": "green",
+      "danger": "aqua"
+    }
+  },
+  "dark": {
+    "variant": {
+      "primary": "red",
+      "secondary": "brown",
+      "info": "yellow",
+      "success": "grey",
+      "warning": "green",
+      "danger": "aqua"
+    }
+  }
+}
