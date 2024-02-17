@@ -17,7 +17,8 @@ const StyledButton = styled.button<{
   $variant: UIVariations;
   $textwhite: string;
 }>`
-  color: ${(props) => props.$textwhite ? '#fff' : "#000"};
+  color: ${(props) => (props.$textwhite ? "#fff" : "#000")};
+  border: 0.3em solid transparent;
   display: inline-block;
   padding: 0.5em 1em;
   font-size: 1em;
@@ -26,19 +27,15 @@ const StyledButton = styled.button<{
   text-decoration: none;
   cursor: pointer;
   border-radius: 0.4em;
-  // transition: all 0.3s ease;
+  transition: all 0.3s ease;
   background-color: var(${(props) => getBackgroundVariant(props.$variant)});
 
   &:hover {
-      font-weight: bold;
+    font-weight: bold;
   }
 
   &:focus {
     outline: none;
-  }
-
-  &:active {
-    
   }
 `;
 
@@ -52,7 +49,7 @@ export const Button = ({
 }: ButtonProps) => {
   return (
     <StyledButton
-      disabled={disabled}
+      disabled={disabled ? true : false}
       onClick={onClick}
       $textwhite={textWhite.toString()}
       $variant={variant}

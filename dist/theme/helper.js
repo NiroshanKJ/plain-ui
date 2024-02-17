@@ -7,13 +7,17 @@ var updateTheme = function (theme, darkMode) {
     localStorage.setItem("themeData", JSON.stringify({ theme: theme, darkMode: darkMode }));
     var type = darkMode ? "dark" : "light";
     document.documentElement.style.setProperty("--bg-primary", theme[type].variant.primary);
+    document.documentElement.style.setProperty("--bg-secondary", theme[type].variant.secondary);
+    document.documentElement.style.setProperty("--bg-info", theme[type].variant.info);
+    document.documentElement.style.setProperty("--bg-success", theme[type].variant.success);
+    document.documentElement.style.setProperty("--bg-warning", theme[type].variant.warning);
+    document.documentElement.style.setProperty("--bg-danger", theme[type].variant.danger);
 };
 exports.updateTheme = updateTheme;
 var getTheme = function (defaultTheme) {
     var themeData = localStorage.getItem("themeData");
     var parsedTheme = JSON.parse(themeData);
-    debugger;
-    if (themeData === "undefind" || !parsedTheme.theme) {
+    if (!parsedTheme || !parsedTheme.theme) {
         localStorage.setItem("themeData", JSON.stringify({ theme: defaultTheme, darkMode: false }));
         return { theme: defaultTheme, darkMode: false };
     }

@@ -17,15 +17,16 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   debugger;
   const [darkMode, setDarkMode] = useState(false);
   const [theme, setTheme] = useState(DefaultTheme);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    debugger;
+    setLoading(true);
     // const themeData = updateTheme(theme, darkMode);
     const themeData = getTheme(DefaultTheme);
-    console.log(themeData, "themeData");
     updateTheme(themeData.theme, themeData.darkMode);
     setTheme(themeData.theme);
     setDarkMode(themeData.darkMode);
+    setLoading(false);
   }, []);
 
   const toggleDarkMode = () => {
@@ -37,6 +38,7 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   };
 
   const themeContextValue = {
+    loading,
     darkMode,
     toggleDarkMode,
     theme,
@@ -44,7 +46,7 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
 
   return (
     <ThemeContext.Provider value={themeContextValue}>
-      {children}
+      {!loading && children}
     </ThemeContext.Provider>
   );
 };

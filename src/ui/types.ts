@@ -1,8 +1,8 @@
 export enum UIVariations {
-  PRIMARY = "PRIMARY",
-  SECONDARY = "PRIMARY",
-  SUCCESS = "PRIMARY",
-  WARNING = "PRIMARY",
-  DANGER = "PRIMARY",
-  INFO = "PRIMARY",
+  PRIMARY = "primary",
+  SECONDARY = "secondary",
+  SUCCESS = "success",
+  WARNING = "warning",
+  DANGER = "danger",
+  INFO = "info",
 }

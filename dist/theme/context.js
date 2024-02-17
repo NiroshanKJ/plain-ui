@@ -22,14 +22,15 @@ var ThemeProvider = function (_a) {
     debugger;
     var _b = (0, react_1.useState)(false), darkMode = _b[0], setDarkMode = _b[1];
     var _c = (0, react_1.useState)(DefaultTheme_json_1.default), theme = _c[0], setTheme = _c[1];
+    var _d = (0, react_1.useState)(true), loading = _d[0], setLoading = _d[1];
     (0, react_1.useEffect)(function () {
-        debugger;
+        setLoading(true);
         // const themeData = updateTheme(theme, darkMode);
         var themeData = (0, helper_1.getTheme)(DefaultTheme_json_1.default);
-        console.log(themeData, "themeData");
         (0, helper_1.updateTheme)(themeData.theme, themeData.darkMode);
         setTheme(themeData.theme);
         setDarkMode(themeData.darkMode);
+        setLoading(false);
     }, []);
     var toggleDarkMode = function () {
         setDarkMode(function (prevDarkMode) {
@@ -39,10 +40,11 @@ var ThemeProvider = function (_a) {
         });
     };
     var themeContextValue = {
+        loading: loading,
         darkMode: darkMode,
         toggleDarkMode: toggleDarkMode,
         theme: theme,
     };
-    return ((0, jsx_runtime_1.jsx)(exports.ThemeContext.Provider, { value: themeContextValue, children: children }));
+    return ((0, jsx_runtime_1.jsx)(exports.ThemeContext.Provider, { value: themeContextValue, children: !loading && children }));
 };
 exports.ThemeProvider = ThemeProvider;

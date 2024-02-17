@@ -1,40 +1,31 @@
-import {
-  ThemeProvider,
-  Row,
-  Column,
-  Button,
-  UIVariations,
-  useTheme,
-} from "@x-niroshan-x/react-plain-ui";
+import React from "react";
+import { Button, Input, useTheme, Section } from "@x-niroshan-x/react-plain-ui";
+import { UIVariations } from "@x-niroshan-x/react-plain-ui/dist/ui/index";
 
-const Template: React.FC = () => {
-  const { darkMode, toggleDarkMode } = useTheme();
-
-  const onClickHandler = () => {
-    toggleDarkMode();
-  };
-  const themeData = useTheme();
-  console.log(themeData.darkMode);
-  return (
-    <>
-      <Button
-        textWhite={true}
-        onClick={onClickHandler}
-        variant={UIVariations.PRIMARY}
-      >
-        Now {darkMode ? "Dark" : "light"}
-      </Button>
-    </>
-  );
-};
+console.log("🚀 ~ UIVariations:", UIVariations);
 
 function App() {
+  const { toggleDarkMode, darkMode } = useTheme();
+
   return (
-    <ThemeProvider>
-      <Row>
-        <Column>{<Template />}</Column>
-      </Row>
-    </ThemeProvider>
+    <div>
+      <h1>Hi {darkMode ? "dark" : "light"}</h1>
+      <Button
+        variant={UIVariations.DANGER}
+        label="Toggle Darkmode"
+        onClick={toggleDarkMode}
+      />
+      <br />
+      <br />
+      <Section width="auto">
+        <Section width="500px">
+          <Input label="Email" />
+          <Input type="password" label="Email" />
+
+          <p>Here are some text</p>
+        </Section>
+      </Section>
+    </div>
   );
 }
 
