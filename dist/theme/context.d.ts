@@ -1,3 +1,4 @@
+import '../css/bootstrap/bootstrap.min.css';
 import React from "react";
 import { ThemeProviderProps } from "./types";
 export declare const ThemeContext: React.Context<{

@@ -1,0 +1,5 @@
+body,
+#root {
+    background-color: var(--main-bg);
+    color: var(--main-color);
+}

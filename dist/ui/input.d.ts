@@ -1,5 +1,5 @@
 export type InputProps = {
-    type?: string;
+    type?: "text" | "email" | "password" | "number";
     onChange?: () => void;
     label?: string;
     disabled?: boolean;

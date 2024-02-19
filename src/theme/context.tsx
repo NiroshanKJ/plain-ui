@@ -1,3 +1,4 @@
+import '../css/bootstrap/bootstrap.min.css';
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { ThemeContextProps, ThemeProviderProps } from "./types";
 import DefaultTheme from "./DefaultTheme.json";
