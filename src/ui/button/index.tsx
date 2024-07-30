@@ -1,9 +1,7 @@
 export type ButtonProps = {
-  label?: string;
+  label: string;
 };
 
-const Button = ({ label }: ButtonProps) => {
+export const Button = ({ label }: ButtonProps) => {
   return <button>{label}</button>;
 };
-
-export default Button;

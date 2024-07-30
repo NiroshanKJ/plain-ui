@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "npm run test",
-    "build": "tsc"
+    "build": "rimraf ./dist && tsc"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,10 @@
     "react-dom": "^17.0.2"
   },
   "dependencies": {
+    "rimraf": "^6.0.1",
     "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "rm-rf": "^2.0.1"
   }
 }
