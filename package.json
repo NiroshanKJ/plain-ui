@@ -1,0 +1,24 @@
+{
+  "name": "react-plain-ui",
+  "version": "1.0.0",
+  "description": "Bunch of react ui components that has plain ui design",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/x-NIROSHAN-x/react-plain-ui.git"
+  },
+  "keywords": [
+    "react",
+    "plain",
+    "ui"
+  ],
+  "author": "Niroshan Jayathilaka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/x-NIROSHAN-x/react-plain-ui/issues"
+  },
+  "homepage": "https://github.com/x-NIROSHAN-x/react-plain-ui#readme"
+}
