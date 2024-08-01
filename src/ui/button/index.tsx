@@ -1,7 +1,16 @@
+import { ThemeTypes } from "../../types/theme";
+import { ReactNode } from "react";
+
 export type ButtonProps = {
-  label: string;
+  type?: ThemeTypes;
+  children?: ReactNode;
+  onClick?: () => void;
 };
 
-export const Button = ({ label }: ButtonProps) => {
-  return <button>{label}</button>;
+export const Button = ({
+  children,
+  type = "primary",
+  onClick = () => {},
+}: ButtonProps) => {
+  return <button onClick={onClick}>{children}</button>;
 };

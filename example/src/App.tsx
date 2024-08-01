@@ -1,11 +1,22 @@
-import "./App.css";
-import { Button } from "react-plain-ui";
+import React from "react";
+import { Button, PlainUIProvider, usePlainUI } from "react-plain-ui";
+
+const ButtonWrapper: React.FC = () => {
+  const { dark, setDark } = usePlainUI();
+  return (
+    <Button onClick={() => setDark(!dark)}>
+      Test {dark ? "dark" : "no dark"}
+    </Button>
+  );
+};
 
 function App() {
   return (
-    <div className="App">
-      <Button label="hi" />
-    </div>
+    <main className="App">
+      <PlainUIProvider>
+        <ButtonWrapper />
+      </PlainUIProvider>
+    </main>
   );
 }
 
